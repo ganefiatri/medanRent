@@ -1,5 +1,4 @@
 'use client';
-
 import React, { JSX } from 'react';
 import { Button, Image } from '@nextui-org/react';
 import { useSearchParams } from 'next/navigation';
@@ -10,10 +9,6 @@ export default function CarAllTab(): JSX.Element {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams!.toString());
   const tab = searchParams.get('tab') || 'all';
-
-  const showFilteredCars = (type: string) => {
-      return <SelectAllCars />;
-  };
 
   return (
     <div className="flex flex-col gap-y-8 md:gap-x-8 md:flex-row justify-between md:items-center">
@@ -33,7 +28,7 @@ export default function CarAllTab(): JSX.Element {
       </div>
 
       <div className="max-w-md w-full flex items-center justify-end gap-4">
-        {showFilteredCars(tab)}
+        {<SelectAllCars />}
         <div>
           <Image src={FilterIcon.src} alt="Filter" radius="none" className="w-8 h-8" />
         </div>

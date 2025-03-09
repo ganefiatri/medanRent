@@ -1,4 +1,5 @@
 "use client";
+import { Car } from "@/@types/Car";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -7,7 +8,7 @@ import { PiSeatFill } from "react-icons/pi";
 
 export default function DetailCars(){
     const { slug } = useParams();
-    const [data, setData] = useState<any>();
+    const [data, setData] = useState([] as any);
 
     useEffect(() => {
         const fetchData = async () => {
