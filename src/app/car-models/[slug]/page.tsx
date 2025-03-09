@@ -1,5 +1,4 @@
 "use client";
-import { Car } from "@/@types/Car";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
